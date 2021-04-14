@@ -1,0 +1,34 @@
+
+\begin{tikzpicture}[
+    nwknode/.style={
+        circle,
+        very thick,
+        minimum size=1cm,
+        draw,
+        fill=black!5,
+    },
+    network/.style args = {#1/#2}{
+        ellipse,
+        minimum height=3cm,
+        draw,
+        thick,
+        dotted,
+        fill=#1,
+        fill opacity=0.1,
+        text opacity=1,
+        label={[anchor=south,above=1mm]270:{\itshape Network #2}}
+    },
+]
+
+\begin{scope}
+    \node[nwknode] (C) {C};
+    \node[nwknode] (A) [left=3cm of C]  {A};
+    \node[nwknode] (B) [right=3cm of C] {B};
+    
+    \node[network={blue/1}, fit=(A)(B)] (net1) {};
+\end{scope}
+
+\end{tikzpicture}
+
+
+

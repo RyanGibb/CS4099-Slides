@@ -1,0 +1,42 @@
+
+% https://tex.stackexchange.com/questions/118763/surrounding-nodes-with-an-ellipse-in-tikz
+
+\begin{tikzpicture}[
+    nwknode/.style={
+        circle,
+        very thick,
+        minimum size=1cm,
+        draw,
+        fill=black!5,
+    },
+    network/.style args = {#1}{
+        fit=(a.corner 2) (a.corner 3), 
+        draw,
+        ellipse,
+        minimum height=3cm,
+        inner xsep=0mm, 
+        inner ysep=3mm,
+        thick,
+        dotted,
+        fill=#1,
+        fill opacity=0.1,
+        text opacity=1,
+        % label={[anchor=south,above=1mm]270:{\itshape Network #2}}
+        % label=:{\itshape Network #2}
+    }
+]
+
+    \node[regular polygon, regular polygon sides=3, inner sep=1cm] (a) {};
+    
+    \node[nwknode] (alice) at (a.corner 1) {alice};
+    \node[nwknode] (clare) at (a.corner 2) {clare};
+    \node[nwknode] (bob)   at (a.corner 3) {bob};
+    
+    \node[network={red}] {\textit{Network 1}};
+    \node[network={blue}, rotate=-60,] at (a.side 3) {\textit{Network 2}};
+    \node[network={yellow}, rotate=60] at (a.side 1) {\textit{Network 3}};
+
+\end{tikzpicture}
+
+
+
