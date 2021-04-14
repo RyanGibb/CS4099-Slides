@@ -168,7 +168,7 @@
         \end{tabular}
     }
     \caption{Experiment 3 MN\textless-\textgreater CN: Received sequence numbers vs Time}
-    \label{fig:exp3throughputs}
+    \label{fig:exp3seqnos}
 \end{figure}
 \end{frame}
 
@@ -191,5 +191,37 @@
 \end{frame}
 
 \section{Questions?}
+
+\begin{frame}{System Stability Issues}
+\begin{figure}[p]
+    \centering
+    \makebox[\textwidth]{
+        \begin{tabular}{cc}            
+            \subfloat[Received sequence numbers vs Time on MN \label{fig:sys_issues_exp3seqnos_mn}]{\includegraphics[width = 0.45\textwidth]
+                {systems_issues_graphs/exp3/Received sequence numbers vs Time on MN.pdf}} &
+            \subfloat[Received sequence numbers vs Time on CN \label{fig:sys_issues_exp3seqnos_cn}]{\includegraphics[width = 0.45\textwidth]
+                {systems_issues_graphs/exp3/Received sequence numbers vs Time on CN.pdf}} \\
+        \end{tabular}
+    }
+    \caption{System Issues Experiment 3 CN\textless-\textgreater MN\\ Received sequence numbers vs Time}
+    \label{fig:sys_issues_exp3seqnos}
+\end{figure}
+\end{frame}
+
+\begin{frame}{System Stability Issues}
+\begin{figure}[p]
+    \centering
+    \makebox[\textwidth]{
+        \begin{tabular}{cc}            
+            \subfloat[Throughput in 1s buckets vs Time on CN \label{fig:sys_issues_exp3throughputs_cn}]{\includegraphics[width = 0.45\textwidth]
+                {systems_issues_graphs/exp3/Throughput in 1s buckets vs Time on CN.pdf}} &
+            \subfloat[Throughput in 1s buckets vs Time on MN \label{fig:sys_issues_exp3throughputs_mn}]{\includegraphics[width = 0.45\textwidth]
+                {systems_issues_graphs/exp3/Throughput in 1s buckets vs Time on MN.pdf}} \\
+        \end{tabular}
+    }
+    \caption{System Issues Experiment 3 CN\textless-\textgreater MN\\ Throughputs in 1s buckets vs Time}
+    \label{fig:sys_issues_exp1throughputs}
+\end{figure}
+\end{frame}
 
 \end{document}
