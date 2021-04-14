@@ -1,4 +1,22 @@
 \documentclass{beamer}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{listings}
+\usepackage{subfig}
+
+\usetikzlibrary{
+    chains,
+    positioning,
+    arrows.meta,
+    decorations.pathreplacing,
+    calc,
+    fit,
+    shapes.geometric
+}
+                    
+\graphicspath{ {images/} }
 
 \bibliographystyle{plain}
 
@@ -25,8 +43,10 @@
 \title{CS4099 Demo}
 \subtitle{Ubiquitous Communication for the Internet of Things\\An Identifier-Locator addressing split overlay network}
 \author{Ryan Gibb}
-\institute{University of St Andrews}
-\date{\today}
+\institute{School of Computer Science\\University of St Andrews}
+\titlegraphic{\includegraphics[scale=2,trim={0.45cm 0.75cm 0.45cm 0.45cm},clip]{st_a_logo.eps}}
+
+\date{Monday 19th April}
 
 \AtBeginSection[]{
   \begin{frame}
@@ -47,13 +67,79 @@
 
 \section{Section}
 
-\begin{frame}{Title}[allowframebreaks]
+
+\begin{frame}{Background}[allowframebreaks]
 \begin{itemize}
-    \item Item 1
+    \item Ubiquitous Computing and the Internet of Things (IoT)
     \pause
-    \item Item 2
+    \item Mobility in IP
+    \begin{itemize}
+        \item Overloading of IP address semantics
+        \item Entanglement of layers
+    \end{itemize}
+    \pause
+    \item Identifier-Locator Network Protocol (ILNP)
     \pause
 \end{itemize}
 \end{frame}
+
+
+
+
+\begin{frame}{Discovery Protocol Example}
+\begin{figure}[ht]
+    \centering
+    \makebox[\textwidth]{
+        \begin{tabular}{c}            
+            \subfloat[Network Topology \label{fig:discovery_topology}]
+                {\scalebox{0.4}{\input{diagrams/discovery_protocol_topology.tex}}} \\
+            \subfloat[Sequence Diagram \label{fig:discovery_sequence}]
+                {\scalebox{0.4}{\input{diagrams/discovery_protocol_sequence_diagram.tex}}} \\
+        \end{tabular}
+    }
+    \caption{Discovery Protocol Example}
+    \label{fig:discovery}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}{Locator Update Example}
+\begin{figure}[ht]
+    \centering
+    \makebox[\textwidth]{
+        \begin{tabular}{cc}
+            \subfloat[Network Topology \label{fig:locator_udpate_topology}]
+                {\scalebox{0.4}{\input{diagrams/locator_update_topology.tex}}} &
+            \subfloat[Sequence Diagram \label{fig:locator_update_sequence_diagram}]
+                {\scalebox{0.4}{\input{diagrams/locator_update_sequence_diagram.tex}}} \\
+        \end{tabular}
+    }
+    \caption{Locator Update Example}
+    \label{fig:locator_udpate}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Physical Testbed}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width = 0.75\textwidth]{testbed.jpg}
+    \caption{Physical Testbed}
+    \label{fig:physical_testbed}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Experiment Virtual Topology}
+\begin{figure}[ht]
+    \centering
+    \scalebox{0.35}{\input{diagrams/experiment.tex}}
+    \caption{Experiment Virtual Topology}
+    \label{fig:experiment_topology}
+\end{figure}
+\end{frame}
+
+
+
+
+
 
 \end{document}
