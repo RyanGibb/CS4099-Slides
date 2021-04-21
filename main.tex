@@ -5,6 +5,8 @@
 \usepackage{tikz}
 \usepackage{listings}
 \usepackage{subfig}
+\usepackage{wrapfig}
+\usepackage{adjustbox}
 
 \usetikzlibrary{
     chains,
@@ -66,40 +68,38 @@
 \end{frame}
 
 \begin{frame}{Background}
-\begin{itemize}
-    \item Ubiquitous Computing and the Internet of Things (IoT)
-    \pause
-    \item Mobility in IP
-    \pause
-    \begin{itemize}
-        \item Overloading of IP address semantics
-        \item Entanglement of layers
+    \begin{itemize}    
+        \item Ubiquitous Computing and the Internet of Things (IoT)
+        \pause
+        \item Mobility in IP
+        \pause
+        \begin{itemize}
+            \item Overloading of IP address semantics
+            \item Entanglement of layers
+        \end{itemize}
+        \pause
+        \item Identifier-Locator Network Protocol (ILNP)
     \end{itemize}
-    \pause
-    \item Identifier-Locator Network Protocol (ILNP)
-\end{itemize}
 \end{frame}
 
 \begin{frame}{An Identifier-Locator Overlay Network}
-\begin{itemize}
-    \item Userspace and Python
-    \pause
-    \item Focus on protocol design and interaction
-    \pause
-    \item Evaluated with experimental analysis in IoT (Raspberry Pis)
-\end{itemize}
+    \begin{itemize}
+        \item Userspace and Python
+        \pause
+        \item Focus on protocol design and interaction
+        \pause
+        \item Evaluated with experimental analysis in IoT (Raspberry Pis)
+    \end{itemize}
 \end{frame}
 
 \begin{frame}{Overlay Network Stack}
-\begin{figure}[ht]
-    \centering
-    \scalebox{0.75}{\input{diagrams/overlay_network_stack.tex}}
-    \caption{Overlay Network Stack}
-    \label{fig:network_stack}
-\end{figure}
+    \begin{figure}[ht]
+        \centering
+        \scalebox{0.35}{\input{diagrams/experiment.tex}}
+        \caption{Physical Testbed}
+        \label{fig:physical_testbed}
+    \end{figure}
 \end{frame}
-
-
 
 \begin{frame}{Discovery Protocol Example}
 \begin{figure}[ht]
@@ -116,7 +116,6 @@
     \label{fig:discovery}
 \end{figure}
 \end{frame}
-
 
 \begin{frame}{Locator Update Example}
 \begin{figure}[ht]
@@ -135,93 +134,93 @@
 \end{frame}
 
 \begin{frame}{Physical Testbed}
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width = 0.75\textwidth]{testbed.jpg}
-    \caption{Physical Testbed}
-    \label{fig:physical_testbed}
-\end{figure}
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width = 0.75\textwidth]{testbed.jpg}
+        \caption{Physical Testbed}
+        \label{fig:physical_testbed}
+    \end{figure}
 \end{frame}
 
 \begin{frame}{Experiment Virtual Topology}
-\begin{figure}[ht]
-    \centering
-    \scalebox{0.35}{\input{diagrams/experiment.tex}}
-    \caption{Experiment Virtual Topology}
-    \label{fig:experiment_topology}
-\end{figure}
+    \begin{figure}[ht]
+        \centering
+        \scalebox{0.35}{\input{diagrams/experiment.tex}}
+        \caption{Experiment Virtual Topology}
+        \label{fig:experiment_topology}
+    \end{figure}
 \end{frame}
 
 \section{Heartbeat Demo}
 
 \begin{frame}{Experiment Results}
-\begin{figure}[p]
-    \centering
-    \makebox[\textwidth]{
-        \begin{tabular}{cc}
-            \subfloat[Received sequence numbers vs Time on MN \label{fig:exp3seqnos_mn}]{
-                \includegraphics[width = 0.45\textwidth]{graphs/exp3/Received sequence numbers vs Time on MN.pdf}
-            } &
-            \subfloat[Received sequence numbers vs Time on CN \label{fig:exp3seqnos_cn}]{
-                \includegraphics[width = 0.45\textwidth]{graphs/exp3/Received sequence numbers vs Time on CN.pdf}
-            } \\
-        \end{tabular}
-    }
-    \caption{Experiment 3 MN\textless-\textgreater CN: Received sequence numbers vs Time}
-    \label{fig:exp3seqnos}
-\end{figure}
+    \begin{figure}[p]
+        \centering
+        \makebox[\textwidth]{
+            \begin{tabular}{cc}
+                \subfloat[Received sequence numbers vs Time on MN \label{fig:exp3seqnos_mn}]{
+                    \includegraphics[width = 0.45\textwidth]{graphs/exp3/Received sequence numbers vs Time on MN.pdf}
+                } &
+                \subfloat[Received sequence numbers vs Time on CN \label{fig:exp3seqnos_cn}]{
+                    \includegraphics[width = 0.45\textwidth]{graphs/exp3/Received sequence numbers vs Time on CN.pdf}
+                } \\
+            \end{tabular}
+        }
+        \caption{Experiment 3 MN\textless-\textgreater CN: Received sequence numbers vs Time}
+        \label{fig:exp3seqnos}
+    \end{figure}
 \end{frame}
 
 \begin{frame}{Experiment Results}
-\begin{figure}[p]
-    \centering
-    \makebox[\textwidth]{
-        \begin{tabular}{cc}
-            \subfloat[Throughput in 1s buckets vs Time on CN \label{fig:exp3throughputs_cn}]{
-                \includegraphics[width = 0.45\textwidth]{graphs/exp3/Throughput in 1s buckets vs Time on CN.pdf}
-            } &
-            \subfloat[Throughput in 1s buckets vs Time on MN \label{fig:exp3throughputs_mn}]{
-                \includegraphics[width = 0.45\textwidth]{graphs/exp3/Throughput in 1s buckets vs Time on MN.pdf}
-            } \\
-        \end{tabular}
-    }
-    \caption{Experiment 3 MN\textless-\textgreater CN: Throughput in 1s buckets vs Time}
-    \label{fig:exp3throughputs}
-\end{figure}
+    \begin{figure}[p]
+        \centering
+        \makebox[\textwidth]{
+            \begin{tabular}{cc}
+                \subfloat[Throughput in 1s buckets vs Time on CN \label{fig:exp3throughputs_cn}]{
+                    \includegraphics[width = 0.45\textwidth]{graphs/exp3/Throughput in 1s buckets vs Time on CN.pdf}
+                } &
+                \subfloat[Throughput in 1s buckets vs Time on MN \label{fig:exp3throughputs_mn}]{
+                    \includegraphics[width = 0.45\textwidth]{graphs/exp3/Throughput in 1s buckets vs Time on MN.pdf}
+                } \\
+            \end{tabular}
+        }
+        \caption{Experiment 3 MN\textless-\textgreater CN: Throughput in 1s buckets vs Time}
+        \label{fig:exp3throughputs}
+    \end{figure}
 \end{frame}
 
 \section{Questions?}
 
-\begin{frame}{System Stability Issues}
-\begin{figure}[p]
-    \centering
-    \makebox[\textwidth]{
-        \begin{tabular}{cc}            
-            \subfloat[Received sequence numbers vs Time on MN \label{fig:sys_issues_exp3seqnos_mn}]{\includegraphics[width = 0.45\textwidth]
-                {systems_issues_graphs/exp3/Received sequence numbers vs Time on MN.pdf}} &
-            \subfloat[Received sequence numbers vs Time on CN \label{fig:sys_issues_exp3seqnos_cn}]{\includegraphics[width = 0.45\textwidth]
-                {systems_issues_graphs/exp3/Received sequence numbers vs Time on CN.pdf}} \\
-        \end{tabular}
-    }
-    \caption{System Issues Experiment 3 CN\textless-\textgreater MN\\ Received sequence numbers vs Time}
-    \label{fig:sys_issues_exp3seqnos}
-\end{figure}
+\begin{frame}{Bonus: System Stability Issues}
+    \begin{figure}[p]
+        \centering
+        \makebox[\textwidth]{
+            \begin{tabular}{cc}            
+                \subfloat[Received sequence numbers vs Time on MN \label{fig:sys_issues_exp3seqnos_mn}]{\includegraphics[width = 0.45\textwidth]
+                    {systems_issues_graphs/exp3/Received sequence numbers vs Time on MN.pdf}} &
+                \subfloat[Received sequence numbers vs Time on CN \label{fig:sys_issues_exp3seqnos_cn}]{\includegraphics[width = 0.45\textwidth]
+                    {systems_issues_graphs/exp3/Received sequence numbers vs Time on CN.pdf}} \\
+            \end{tabular}
+        }
+        \caption{System Issues Experiment 3 CN\textless-\textgreater MN\\ Received sequence numbers vs Time}
+        \label{fig:sys_issues_exp3seqnos}
+    \end{figure}
 \end{frame}
 
-\begin{frame}{System Stability Issues}
-\begin{figure}[p]
-    \centering
-    \makebox[\textwidth]{
-        \begin{tabular}{cc}            
-            \subfloat[Throughput in 1s buckets vs Time on CN \label{fig:sys_issues_exp3throughputs_cn}]{\includegraphics[width = 0.45\textwidth]
-                {systems_issues_graphs/exp3/Throughput in 1s buckets vs Time on CN.pdf}} &
-            \subfloat[Throughput in 1s buckets vs Time on MN \label{fig:sys_issues_exp3throughputs_mn}]{\includegraphics[width = 0.45\textwidth]
-                {systems_issues_graphs/exp3/Throughput in 1s buckets vs Time on MN.pdf}} \\
-        \end{tabular}
-    }
-    \caption{System Issues Experiment 3 CN\textless-\textgreater MN\\ Throughputs in 1s buckets vs Time}
-    \label{fig:sys_issues_exp1throughputs}
-\end{figure}
+\begin{frame}{Bonus: System Stability Issues}
+    \begin{figure}[p]
+        \centering
+        \makebox[\textwidth]{
+            \begin{tabular}{cc}            
+                \subfloat[Throughput in 1s buckets vs Time on CN \label{fig:sys_issues_exp3throughputs_cn}]{\includegraphics[width = 0.45\textwidth]
+                    {systems_issues_graphs/exp3/Throughput in 1s buckets vs Time on CN.pdf}} &
+                \subfloat[Throughput in 1s buckets vs Time on MN \label{fig:sys_issues_exp3throughputs_mn}]{\includegraphics[width = 0.45\textwidth]
+                    {systems_issues_graphs/exp3/Throughput in 1s buckets vs Time on MN.pdf}} \\
+            \end{tabular}
+        }
+        \caption{System Issues Experiment 3 CN\textless-\textgreater MN\\ Throughputs in 1s buckets vs Time}
+        \label{fig:sys_issues_exp1throughputs}
+    \end{figure}
 \end{frame}
 
 \end{document}
