@@ -1,7 +1,4 @@
 
-% Adapted from
-% https://tex.stackexchange.com/questions/468410/tikz-drawing-layer-by-layer
-
 \begin{tikzpicture}[
     node distance = -0.5mm and 0mm,
     start chain = going below,
@@ -12,19 +9,6 @@
         label=left:#1
     }
 ]
-
-    % \node (n3) [layer={Layer 3}, on chain] {ILNPv6};
-    %     \node (n4) [layer={Layer 4},above right=of n3.north west,text width=5cm] {STP};
-    %     \node (n5) [layer={Layer 7},above right=of n4.north west,text width=5cm] {Application: Experiments/Heartbeat};
-    %     \node (n4B) [layer=,above left=of n3.north east,text width=2cm] {Discovery Protocol};
-    %     \node (n5B) [layer=,above left=of n4B.north east,text width=2cm,draw=none] {};
-    % \node (n3) [layer={}, on chain] {ILNPv6};
-    %     \node (n3A) [layer={},above right=of n3.north west,text width=5cm] {};
-    %     \node (n4) [layer={Layer 4},above right=of n3A.north west,text width=5cm] {STP};
-    %     \node (n5) [layer={Layer 7},above right=of n4.north west,text width=5cm] {Application: Experiments/Heartbeat};
-    %     \node (n3B) [layer=,above left=of n3.north east,text width=2cm] {Discovery Protocol};
-    %     \node (n4B) [layer=,above left=of n3B.north east,text width=2cm,draw=none] {};
-    %     \node (n5B) [layer=,above left=of n4B.north east,text width=2cm,draw=none] {};
     \node (n3) [layer={}, on chain, minimum height=24mm] {ILNPv6};
         \node (n4) [layer={Layer 4},above right=of n3.north west,text width=5cm] {STP};
         \node (n5) [layer={},above right=of n4.north west,text width=5cm] {Application};
@@ -50,6 +34,5 @@
     
     \draw [decorate, decoration={brace, amplitude=10pt, raise=4pt}]
         (n3.south west) -- (n3.north west)
-        node [black, midway, xshift=-40pt] {Layer 3};
-
+        node [black, midway, xshift=-40pt] {Layer 3};z
 \end{tikzpicture}

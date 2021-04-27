@@ -6,7 +6,7 @@
     \node[below of=c, node distance=10cm] (c_ground) {};
     \node[below of=b, node distance=10cm] (b_ground) {};
     \node[below of=a, node distance=10cm] (a_ground) {};
-    %
+    
     \draw[thick] (c) -- (c_ground);
     \draw[thick] (b) -- (b_ground);
     \draw[thick] (a) -- (a_ground);
@@ -20,5 +20,4 @@
     
     \draw[-{Latex[length=2mm,width=3mm]}] ($(b)!0.48!(b_ground)$) -- node[above,sloped]{B advertisement} ($(c)!0.63!(c_ground)$);
     \draw[-{Latex[length=2mm,width=3mm]}] ($(c)!0.63!(c_ground)$) -- node[above,sloped]{B advertisement} ($(a)!0.78!(a_ground)$);
-    
 \end{tikzpicture}

@@ -1,7 +1,4 @@
 
-% Adapted from
-% https://tex.stackexchange.com/questions/468410/tikz-drawing-layer-by-layer
-
 \begin{tikzpicture}[
     node distance = -0.5mm and 0mm,
     start chain = going below,
@@ -33,5 +30,4 @@
     \draw[very thick,->] (network) -- node[right] {imports} (network |- link.north);
     
     \node [module,circle,draw,below left,text width=2cm] at (current bounding box.north east) {\texttt{util.py}};
-    
 \end{tikzpicture}

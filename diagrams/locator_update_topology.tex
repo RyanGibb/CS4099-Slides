@@ -1,5 +1,4 @@
 
-
 \begin{tikzpicture}[
     nwknode/.style={
         circle,
@@ -22,8 +21,6 @@
         text opacity=1,
     }
 ]
-
-\begin{scope}
     \node[regular polygon, regular polygon sides=3, inner sep=2cm, rotate=60] (a) {};
     \node[regular polygon, regular polygon sides=3, inner sep=2cm] (c) {};
     
@@ -48,6 +45,4 @@
     \node[network={red}, rotate=60, label=\texttt{0:0:0:a}] at (c.side 1) {};
     \node[network={blue}, rotate=0, label={[anchor=south,above=-6mm]270:\texttt{0:0:0:b}}] at (c.side 2) {};
     \node[network={yellow}, rotate=-60, label=\texttt{0:0:0:c}] at (c.side 3) {};
-\end{scope}
-
 \end{tikzpicture}
